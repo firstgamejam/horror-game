@@ -1,0 +1,53 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://vehicle.gd" type="Script" id=1]
+
+[sub_resource type="BoxShape" id=1]
+
+[sub_resource type="CubeMesh" id=2]
+
+[node name="vehicle" type="VehicleBody"]
+mass = 126.837
+script = ExtResource( 1 )
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
+shape = SubResource( 1 )
+
+[node name="MeshInstance" type="MeshInstance" parent="CollisionShape"]
+mesh = SubResource( 2 )
+material/0 = null
+
+[node name="FLwheel" type="VehicleWheel" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.85, 0, -2 )
+use_as_steering = true
+wheel_friction_slip = 1.0
+suspension_travel = 0.1
+suspension_stiffness = 50.0
+
+[node name="FRwheel" type="VehicleWheel" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.85, 0, -2 )
+use_as_steering = true
+wheel_friction_slip = 1.0
+suspension_travel = 0.1
+suspension_stiffness = 50.0
+
+[node name="RLwheel" type="VehicleWheel" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.85, 0, 2 )
+use_as_traction = true
+wheel_friction_slip = 1.0
+suspension_travel = 0.1
+suspension_stiffness = 50.0
+
+[node name="RRwheel" type="VehicleWheel" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.85, 0, 2 )
+use_as_traction = true
+wheel_friction_slip = 1.0
+suspension_travel = 0.1
+suspension_stiffness = 50.0
+
+[node name="SpringArm" type="SpringArm" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 11 )
+collision_mask = 2
+
+[node name="ClippedCamera" type="ClippedCamera" parent="SpringArm"]
