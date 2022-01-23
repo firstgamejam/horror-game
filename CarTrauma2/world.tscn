@@ -26,6 +26,9 @@ albedo_color = Color( 0, 0.764706, 1, 1 )
 [sub_resource type="Environment" id=6]
 background_mode = 1
 background_color = Color( 0.145098, 0.145098, 0.145098, 1 )
+glow_blend_mode = 1
+glow_hdr_threshold = 0.1
+glow_bicubic_upscale = true
 
 [node name="world" type="Spatial"]
 
