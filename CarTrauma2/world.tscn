@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://icon.png" type="Texture" id=1]
 [ext_resource path="res://car.tscn" type="PackedScene" id=2]
@@ -23,10 +23,14 @@ size = Vector3( 500, 2, 500 )
 [sub_resource type="SpatialMaterial" id=5]
 albedo_color = Color( 0, 0.764706, 1, 1 )
 
+[sub_resource type="Environment" id=6]
+background_mode = 1
+background_color = Color( 0.145098, 0.145098, 0.145098, 1 )
+
 [node name="world" type="Spatial"]
 
 [node name="car" parent="." instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 3, 3 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 2, 3 )
 
 [node name="monster" parent="." instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 1, -10 )
@@ -51,3 +55,6 @@ use_collision = true
 width = 6.0
 depth = 4.0
 material = SubResource( 5 )
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource( 6 )

@@ -53,3 +53,8 @@ collision_mask = 2
 spring_length = 5.0
 
 [node name="ClippedCamera" type="ClippedCamera" parent="SpringArm"]
+
+[node name="Headlight" type="SpotLight" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -1 )
+light_energy = 10.0
+spot_range = 20.0
