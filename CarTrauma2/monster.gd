@@ -6,6 +6,7 @@ onready var car = $"../car" as VehicleBody
 var path = []
 var current_node = 0
 var speed = 2
+var target = null
 
 # nessecary?
 func _ready():
@@ -13,6 +14,7 @@ func _ready():
 
 # monster movement
 func _physics_process(delta):
+	self.look_at(car.global_transform.origin, Vector3.UP) # look at car
 	if current_node < path.size():
 		var direction: Vector3 = path[current_node] - global_transform.origin
 		if direction.length() < 1:
