@@ -208,7 +208,7 @@ transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -58, 4,
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -65, 4, 6 )
 
 [node name="building_alpha13" parent="Navigation/NavigationMeshInstance/building_container" instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -65, 4, 10 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -66, 4, 10 )
 
 [node name="building_alpha20" parent="Navigation/NavigationMeshInstance/building_container" instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -38, 4, -9 )
